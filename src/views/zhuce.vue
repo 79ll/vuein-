@@ -28,7 +28,7 @@
 			</el-input>
 		</el-form-item>
 		<el-form-item>
-			<el-button @click="setzhanghao"></el-button>
+			<el-button @click="setzhanghao()"></el-button>
 		</el-form-item>
 	</el-form>
 	
