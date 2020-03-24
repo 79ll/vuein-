@@ -2,21 +2,34 @@
 
 	<div id="zhucebackground">
 
-	<div id="zhucebacktext">
-		
-	<h1>注册</h1>
-	<span>*账号:</span>
-	<input type="text" v-model.trim="zhanghao" @focusout="yanzheng()"/>
-	<span>{{YesNo}}</span>
-	<span>*密码:</span>
-	<input type="password" v-model="mima" @focusout="Isnull()" @change="isSame()"/>
-	<span>{{isnull}}</span>
-	<span>*确认密码:</span>
-	<input type="password" v-model="nextmami" @change="isSame()"/>
-	<div @click="zhuce()" ref="click" :id="isReady">注册</div>
-	<span>{{state}}</span>
+		<el-form :model="yonghu" :rules="rules" ref="yonghu">
+		<el-form-item >
+		<h1>注册</h1>
+		</el-form-item >
+		<el-form-item label="输入账号" prop="zhanghao">
+		<el-input
+		  placeholder="请输入账号"
+		  v-model.trim="yonghu.zhanghao"
+		  clearable>
+		</el-input>
+		</el-form-item>
+		<el-form-item label="密码" prop="mima">
+			<el-input laceholder="请输入密码"
+			v-model.trim="yonghu.mima"
+			type="password"
+			show-password>
+			</el-input>
+		</el-form-item>
+		<el-form-item label="确认密码" prop="nextmima">
+			<el-input laceholder="请输入密码"
+			v-model.trim="yonghu.nextmima"
+			type="password"
+			show-password>
+			</el-input>
+		</el-form-item>
 	
-	</div>
+	</el-form>
+	
 	</div>
 	
 </template>
@@ -25,15 +38,45 @@
 	export default{
 		name:'zhuce',
 		data(){
+			var Isexist=(rule,value,callback)=>{
+				this.$axios({
+					methods:'get',
+					url:'/zhuce',
+					params:{
+						type:'yanzheng',
+						username:value,
+					},
+					
+				}).then((data)=>{
+				if(data.data=='√')
+				callback();
+				else
+				callback(new Error("账号已经存在"));
+					
+				}).catch((error)=>{
+					console.log(error);
+				})
+			};
 			return{
-				zhanghao:'',
+				yonghu:{	zhanghao:'',
 				mima:'',
-				nextmami:'',
-				YesNo:'',
-				state:'',
-				isnull:''
-			}
+				nextmima:''},
+				rules:{
+					zhanghao:[{required:true,message:'账号不能为空',trigger:'blur'},
+								{validator:Isexist,trigger:'blur'},
+								{type:"string",whitespace:true,trigger:'blur'}],
+					mima:[{required:true,message:'密码不能为空',trigger:'blur'},
+					{min:5,max:16,message:'密码长度应该5到6之间',trigger:'blur'},],
+					nextmima:[{
+						required:true,message:'密码不能为空',trigger:'blur'
+					}]
+				}
+				
+			
+			};
 		},
+	
+	
 		computed:{
 			isReady:function(){
 				if(this.YesNo=='√'&&this.mima!=''&&this.mima==this.nextmami)
@@ -122,7 +165,7 @@
 	}
 	#zhucebackground{
 		width: 30%;
-		background:rgba(0,0,0,0.5);
+	 box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
 		height: 70%;
 		position: absolute;
 	box-shadow: 10px 10px 5px #888888;
