@@ -27,7 +27,9 @@
 			show-password>
 			</el-input>
 		</el-form-item>
-	
+		<el-form-item>
+			<el-button @click="setzhanghao"></el-button>
+		</el-form-item>
 	</el-form>
 	
 	</div>
@@ -54,6 +56,7 @@
 				callback(new Error("账号已经存在"));
 					
 				}).catch((error)=>{
+					callback(new Error("网络未间接"))
 					console.log(error);
 				})
 			};
