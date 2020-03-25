@@ -11,7 +11,7 @@
 		  <el-col :span="18"><div class="grid-content"> </div></el-col>
 	  </el-row>
 	<el-row>
-		
+			
 			  <el-col :span="24"><caidang id="caidang"></caidang></el-col>
 			   
 	</el-row>
@@ -21,11 +21,16 @@
 
 
 		
-	
+	<el-row>
+			<el-col :span="3"><div class="grid-content"> </div></el-col>
+			
+		<el-col :span="18">
 	<div id="view">
 	<router-view :key="$route.query.que"></router-view>
 	</div>
-	
+	</el-col>
+	<el-col :span="3"><div class="grid-content"> </div></el-col>
+	</el-row>
   </div>
 </template>
 <script>
@@ -81,12 +86,19 @@ color: aliceblue;
 }
 #view{
 	position: absolute;
+border-left-width: 0.125rem;
+border-left-color: #dcdfe6;
+border-left-style: solid;
 
 	height: 100%;
 	width: 80%;
 	z-index: 1;
 	
 }
+#view::after{
+	clear: both;
+}
+
 #app{
 	height: 100%;
 

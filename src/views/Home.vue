@@ -1,8 +1,8 @@
 <template>
   <div class="home">
 <el-row >
-	<el-col :span="2"><div></div></el-col>
-	<el-col :span="14">
+
+	<el-col :span="16">
 	<lunbo></lunbo>
 	</el-col>
 	<el-col :span="8"><denglu></denglu></el-col>

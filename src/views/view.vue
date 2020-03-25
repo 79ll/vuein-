@@ -34,5 +34,8 @@
 	}
 </script>
 
-<style>
+<style scoped>
+	#shangpingview{
+		width: 80%;
+	}
 </style>
