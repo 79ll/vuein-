@@ -97,7 +97,6 @@ html,body { height: 100%;
 	
 }
 .grid-content{
-	background-color: #00FFFF;
-	padding: 1px;
+min-height: 1px;
 }
 </style>

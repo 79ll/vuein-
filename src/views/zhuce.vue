@@ -1,7 +1,7 @@
 <template>
 
-	<div id="zhucebackground">
-
+	<div >
+<el-card id="zhucebackground">
 		<el-form :model="yonghu" :rules="rules" ref="yonghu">
 		<el-form-item >
 		<h1>注册</h1>
@@ -31,7 +31,7 @@
 			<el-button @click="setzhanghao()"></el-button>
 		</el-form-item>
 	</el-form>
-	
+	</el-card>
 	</div>
 	
 </template>
@@ -168,10 +168,10 @@
 	}
 	#zhucebackground{
 		width: 30%;
-	 box-shadow: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
+	
 		height: 70%;
 		position: absolute;
-	box-shadow: 10px 10px 5px #888888;
+
 	position: absolute;
 	left: 30.5rem;
 	top: 15rem;

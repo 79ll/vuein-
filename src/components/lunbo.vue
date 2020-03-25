@@ -1,6 +1,6 @@
 <template>
 	<div id="lunbo">
-	<el-carousel indicator-position="outside">
+	<el-carousel indicator-position="outside" height="30rem">
 	    <el-carousel-item v-for="item in picturelist" :key="item">
 	<router-link to="/view" tag='img' :src="'/img/'+item">
 		
@@ -27,5 +27,11 @@
 </script>
 
 <style scoped>
+	#lunbo{
+		height: 30rem;
+		border-width: 0.0625rem;
+		 border-style: solid;
+		 border-color: #dcdfe6;
+	}
 	
 </style>
