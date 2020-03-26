@@ -2,7 +2,7 @@
 
 
 <el-card id="zhucebackground">
-		<el-form :model="yonghu" :rules="rules" ref="yonghu">
+		<el-form :model="yonghu" status-icon :rules="rules" ref="yonghu">
 		<el-form-item >
 		<h1>注册</h1>
 		</el-form-item >

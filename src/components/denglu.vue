@@ -27,7 +27,7 @@ export default{
 
 <style scoped>
 	div{
-	
+	width: 100%;
 	}
 	
 	#el-form *{
@@ -37,7 +37,7 @@ export default{
 		text-align: center;
 	}
 	#card{
-		width: 20rem;
+		
 		height: 30rem;;
 	}
 </style>

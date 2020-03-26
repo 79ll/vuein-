@@ -33,5 +33,8 @@ export default {
 	div{
 		min-height: 1px;
 	}
+	.home{
+		width: 100%;
+	}
 </style>
 

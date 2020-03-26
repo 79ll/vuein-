@@ -34,6 +34,7 @@
 		border-width: 0.0625rem;
 		 border-style: solid;
 		 border-color: #dcdfe6;
+		 width: 100%;
 	}
 	#img{
 		height: 100%;

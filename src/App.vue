@@ -24,12 +24,12 @@
 	<el-row id="viewrouter">
 			<el-col :span="3"><div class="grid-content"> </div></el-col>
 			
-		<el-col :span="18">
+		<el-col :span="21" id="viewcol">
 	<div id="view">
 	<router-view :key="$route.query.que"></router-view>
 	</div>
 	</el-col>
-	<el-col :span="3"><div class="grid-content"> </div></el-col>
+	<el-col :span="2"><div class="grid-content"> </div></el-col>
 	</el-row>
   </div>
 </template>
@@ -53,6 +53,7 @@ export default{
 <style>
 body{
 margin: 0;
+padding: 0;
 }
 a{
 	text-decoration: none;
@@ -85,25 +86,33 @@ color: aliceblue;
 	padding: 0.625rem;
 }
 #view{
-	position: absolute;
+
 border-left-width: 0.125rem;
 border-left-color: #dcdfe6;
 border-left-style: solid;
-
+background-color: white;
 	height: 100%;
 	width: 80%;
-	z-index: 1;
+	
 	
 }
 #view::after{
 	clear: both;
 }
-#viewrouter{
+#viewcol{
 	height: 100%;
 }
-#app{
+#viewrouter{
 	height: 100%;
+	background-image: url('/img/background.jpg');
+}
 
+#app{
+	position:relative;
+	height: 100%;
+	width: 100%;
+	
+	
 }
 html,body { height: 100%; 
 }
