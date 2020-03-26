@@ -2,7 +2,7 @@
 	<div id="lunbo">
 	<el-carousel  height="30rem">
 	    <el-carousel-item v-for="item in picturelist" :key="item">
-	<router-link to="/view" >
+	<router-link to="/view" tag="div" id="routerdiv">
 		<el-image :src="'/img/'+item"
 				fit="cover"
 				id="img"></el-image>
@@ -36,6 +36,15 @@
 		 border-color: #dcdfe6;
 	}
 	#img{
-		height: 30rem;
+		height: 100%;
+		width: 100%;
+	}
+	#routerdiv{
+		height: 100%;
+		width: 100%;
+	}
+	.el-image{
+		height: 100%;
+		width: 100%;
 	}
 </style>
