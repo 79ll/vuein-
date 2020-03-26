@@ -86,7 +86,7 @@ color: aliceblue;
 	padding: 0.625rem;
 }
 #view{
-
+position:relative;
 border-left-width: 0.125rem;
 border-left-color: #dcdfe6;
 border-left-style: solid;

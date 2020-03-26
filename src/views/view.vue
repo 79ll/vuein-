@@ -1,6 +1,14 @@
 <template>
 	<div id="shangpingview">
 	<item v-for="(item,index) in all" :all="item" :key="index"/>
+	<el-pagination
+	  background
+	  layout="prev, pager, next"
+	  :total="1000"
+	  :page-size="20"
+	  @current-change="clickchang"
+	  id="pag">
+	</el-pagination>
 	</div>
 </template>
 
@@ -25,7 +33,8 @@
 						name:'text3',
 						monry:6000
 					}
-				]
+				],
+				
 			}
 		},
 		components:{
@@ -33,12 +42,23 @@
 		},
 		mounted(){
 			console.log("route is"+this.$route.query.que)
+		},
+	methods:{
+		clickchang(val){
+			console.log(val)
 		}
+	}
+		
 	}
 </script>
 
 <style scoped>
 	#shangpingview{
 		width: 80%;
+	}
+	#pag{
+		position: absolute; 
+		bottom: 0rem;
+		right: 0rem;
 	}
 </style>
