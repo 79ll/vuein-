@@ -30,6 +30,9 @@
 		},
 		components:{
 			item
+		},
+		mounted(){
+			console.log("route is"+this.$route.query.que)
 		}
 	}
 </script>

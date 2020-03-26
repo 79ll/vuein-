@@ -21,7 +21,7 @@
 
 
 		
-	<el-row>
+	<el-row id="viewrouter">
 			<el-col :span="3"><div class="grid-content"> </div></el-col>
 			
 		<el-col :span="18">
@@ -98,7 +98,9 @@ border-left-style: solid;
 #view::after{
 	clear: both;
 }
-
+#viewrouter{
+	height: 100%;
+}
 #app{
 	height: 100%;
 

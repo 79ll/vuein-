@@ -8,7 +8,7 @@ import {TweenMax} from 'gsap'
 import ElementUI from 'element-ui';
 import '../public/style/theme/index.css';
 Vue.config.productionTip = false
-axios.defaults.baseURL="/api";
+axios.defaults.baseURL='/api';
 Vue.prototype.$axios = axios ;
 Vue.prototype.$TweenMax = TweenMax ;
 Vue.use(ElementUI);
