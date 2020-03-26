@@ -1,6 +1,6 @@
 <template>
 
-	<div >
+
 <el-card id="zhucebackground">
 		<el-form :model="yonghu" :rules="rules" ref="yonghu">
 		<el-form-item >
@@ -28,11 +28,11 @@
 			</el-input>
 		</el-form-item>
 		<el-form-item>
-			<el-button @click="setzhanghao()"></el-button>
+			<el-button type="primary" @click="zhuce('yonghu')" >注册</el-button>
 		</el-form-item>
 	</el-form>
 	</el-card>
-	</div>
+
 	
 </template>
 
@@ -89,55 +89,29 @@
 			}
 		},
 		methods:{
-			yanzheng(){
-				this.$axios({
-					methods:'get',
-					url:'/zhuce',
-					params:{
-						type:'yanzheng',
-						username:this.zhanghao,
-					},
-					
-				}).then((data)=>{
-					this.YesNo=data.data;
-					
-				}).catch((error)=>{
-					console.log(error);
+			zhuce(formname){
+				this.$refs[formname].validate((valid)=>{
+					if(valid==true)
+					{
+						this.$axios({
+							methods:'get',
+							url:'/zhuce',
+							params:{
+								type:'zhuce',
+								username:this.yonghu.zhanghao,
+								pass: this.yonghu.mima
+							},
+							
+						}).then((data)=>{
+							this.state=data.data;
+							console.log("es")
+							
+						}).catch((error)=>{
+							console.log(error);
+						})
+					}
 				})
-					},
-			Isnull(){
-						if(this.mima=='')
-						isnull="密码为空"
-						else
-						this.isnull='';
-					},
-			isSame(){
-				if(this.mima!=this.nextmami)
-				{
-					this.state="密码和确认密码不相同"
-				}
-				else
-				this.state='';
-			}	,	
-			zhuce(){
-			if(this.isReady=='isready')	{
-			this.$axios({
-				methods:'get',
-				url:'/zhuce',
-				params:{
-					type:'zhuce',
-					username:this.zhanghao,
-					pass: this.mima
-				},
-				
-			}).then((data)=>{
-				this.state=data.data;
-				
-			}).catch((error)=>{
-				console.log(error);
-			})
 			
-										}	
 			}	
 	}
 		
