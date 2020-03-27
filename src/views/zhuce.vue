@@ -144,7 +144,7 @@
 		width: 30%;
 	
 		height: 70%;
-		position: absolute;
+
 
 	position: absolute;
 	left: 30.5rem;

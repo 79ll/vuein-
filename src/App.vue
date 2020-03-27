@@ -8,7 +8,13 @@
 	  </el-row>
 	  <el-row>
 		  <el-col :span="6"><h2>购物网站</h2></el-col>
-		  <el-col :span="18"><div class="grid-content"> </div></el-col>
+		  <el-col :span="12">
+			  
+			  <sou></sou>
+		  </el-col>
+		  <el-col :span="6">
+			 <div class="grid-content"> </div> 
+		  </el-col>
 	  </el-row>
 	<el-row>
 			
@@ -37,6 +43,7 @@
 import lunbo from './components/lunbotext.vue'
 import caidang from './components/caidang.vue'
 import denglu from './components/denglu.vue'
+import sou from './components/sou.vue'
 export default{
 	name:'APP',
 	data(){
@@ -45,46 +52,28 @@ export default{
 		}
 	},
 	components:{
-	
+		sou,
 		caidang
 	}
 }
 </script>
-<style>
-body{
+<style >
+	 .el-select .el-input {
+	    width: 130px;
+	  }
+	  .input-with-select .el-input-group__prepend {
+	    background-color: #fff;
+	  }
+
+html,body{
 margin: 0;
 padding: 0;
+height: 100%;
 }
 a{
 	text-decoration: none;
 }
-#denglu{
-	position: absolute;
-	padding: 10px;
-}
-#nav{
 
-	display: inline-block;
-	width:100%;
-	height: 20%;
-	
-	}
-	#router *{
-		float: left;
-	}
-.router{
-display: block;
-padding: 0.625rem;
-color: aliceblue;
-}
-.see{
-
-	position: absolute;
-	top: 4.7125rem;
-	display: block;
-	clear: both;
-	padding: 0.625rem;
-}
 #view{
 position:relative;
 border-left-width: 0.125rem;
@@ -111,13 +100,6 @@ background-color: white;
 	position:relative;
 	height: 100%;
 	width: 100%;
-	
-	
-}
-html,body { height: 100%; 
-}
-#caidang{
-	
 }
 .grid-content{
 min-height: 1px;

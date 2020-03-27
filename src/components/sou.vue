@@ -1,9 +1,17 @@
 <template>
 	<div id="input">
-	<input type="text" v-model="qurey" />
-	<router-link :to="{path:'/view',query:{que:qurey}}" id="button" tag="div" ></router-link>
-	<div>{{qurey}}</div>
+	<el-input placeholder="请输入内容" v-model="qurey" class="input-with-select">
+	    <el-select v-model="select" slot="prepend" placeholder="请选择">
+	      <el-option label="餐厅名" value="1"></el-option>
+	      <el-option label="订单号" value="2"></el-option>
+	      <el-option label="用户电话" value="3"></el-option>
+	    </el-select>
+
+	    <el-button slot="append" icon="el-icon-search" @click="found()"></el-button>
+	  </el-input>
+	
 	</div>
+	
 </template>
 
 <script>
@@ -11,25 +19,35 @@
 		name:'myinput',
 		data(){
 			return{
-			qurey:''
+			qurey:'',
+			select:'',
 			}
-		}
+		
+		},
+	
+		methods:{
+			found(){
+		
+			
+
+			this.$router.push({query:{
+				que:this.qurey
+			}})
+			}
+		},
+		
 	}
 	
 </script>
 
 <style>
 	#input input{
-		height: 30px;
-		width: 35rem;
+		height: 40px;
+
 	}
-	#button{
-		height:34.8px;
-		width:34.8px;
-		background-image: url(../../public/搜索.png);
-		background-size:cover;
-		background-color: #ffaa00;
-		cursor:pointer
+	
+			.el-select{
+				width: 130px;
 			}
 	
 </style>

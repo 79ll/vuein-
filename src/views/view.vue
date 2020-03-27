@@ -4,7 +4,7 @@
 	<el-pagination
 	  background
 	  layout="prev, pager, next"
-	  :total="1000"
+	  :total="all.length"
 	  :page-size="20"
 	  @current-change="clickchang"
 	  id="pag">
@@ -42,6 +42,7 @@
 		},
 		mounted(){
 			console.log("route is"+this.$route.query.que)
+			
 		},
 	methods:{
 		clickchang(val){
