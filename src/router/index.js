@@ -5,6 +5,9 @@ import About from '../views/About.vue'
 import Text from '../views/Text.vue'
 import view from '../views/view.vue'
 import zhuce from '../views/zhuce.vue'
+import houtai from '../views/houtai.vue'
+import add from '../views/add.vue'
+import denglu from '../views/dengluview.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -13,6 +16,19 @@ const routes = [
     name: 'home',
 	redirect:'/Home',
     
+  },
+  {
+	  path:'/houtai',
+	  name: 'houtai', 
+	  children:[
+		  {
+			  path:'add',
+			  name:'add',
+			  component:add
+		  }
+	  ],
+	  component:houtai,
+	 
   },
   {
     path: '/Home',
@@ -24,6 +40,11 @@ const routes = [
 	  path: '/zhuce',
 	  name: 'zhuce',
 	  component:zhuce
+  },
+  {
+	  path:'/denglu',
+	  name:'denglu',
+	  component:denglu
   },
   {
     path: '/about/:id',

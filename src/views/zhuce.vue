@@ -1,7 +1,9 @@
 <template>
 
 
-<el-card id="zhucebackground">
+<el-card id="zhucebackground"
+		v-loading="loading"
+		element-loading-text="注册中">
 		<el-form :model="yonghu" status-icon :rules="rules" ref="yonghu">
 		<el-form-item >
 		<h1>注册</h1>
@@ -64,6 +66,7 @@
 				yonghu:{	zhanghao:'',
 				mima:'',
 				nextmima:''},
+				loading:false,
 				rules:{
 					zhanghao:[{required:true,message:'账号不能为空',trigger:'blur'},
 								{validator:Isexist,trigger:'blur'},
@@ -92,7 +95,7 @@
 			zhuce(formname){
 				this.$refs[formname].validate((valid)=>{
 					if(valid==true)
-					{
+					{this.loading=true;
 						this.$axios({
 							methods:'get',
 							url:'/zhuce',
@@ -103,11 +106,17 @@
 							},
 							
 						}).then((data)=>{
-							this.state=data.data;
-							console.log("es")
+							console.log(data.data);
+							this.loading=false
+							this.$message({
+								message:"注册成功",
+								type:'success'
+							})
 							
 						}).catch((error)=>{
+							this.loading=false
 							console.log(error);
+							this.$message.error("注册失败,可能是网络不行，请稍后再试");
 						})
 					}
 				})

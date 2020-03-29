@@ -33,11 +33,11 @@
 		methods:{
 			remove(n){
 			this.$refs.text.htmldisplay(n);
-			this.$refs.router.children[n].style.borderBottomColor='#ff9900'
+			this.$refs.router.children[n].style.borderTopColor='#ff9900'
 			},
 			add(n){
 			this.$refs.text.htmladd(n);
-			this.$refs.router.children[n].style.borderBottomColor='white'
+			this.$refs.router.children[n].style.borderTopColor='white'
 			}
 			
 		}
@@ -56,19 +56,21 @@
 	            visibility: hidden;
 	}
 	.router-text div{
-		border-bottom-style:solid;
-		border-bottom-color: #ff9900;
-		border-bottom-width: 5px;
-		padding: 0px 10px 10px 10px;
+		border-top-style:solid;
+		border-top-color: #ff9900;
+		border-top-width: 5px;
+		padding: 10px 10px 10px 10px;
 		border-radius: inherit;
 		float: left;
 		box-shadow: #888888;
 		background-color: #ff9900;
+		position: relative;
+		left: 100px;
 	}
 	#thetext{
 		position: absolute;
-		top: 90px;
-		left: 0px;
+		top: 45px;
+		left: 180px;
 		
 		z-index: 100;
 		background-Color:white
@@ -76,17 +78,12 @@
 	}
 	.router-text{
 		background-color: #ff9900;
-		
 		min-height: 20px;
-		padding-top: 10px;
+		
 		clear: both;
 		padding-left: 100px;
-		
+	
 	}
 
-	#DL{
-		position: absolute;
-		top: -4rem;
-		right: 10rem;
-	}
+
 </style>

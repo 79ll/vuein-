@@ -27,10 +27,10 @@
 	
 		methods:{
 			found(){
-		
 			
-
-			this.$router.push({query:{
+			
+			
+			this.$router.push({path:'/view',query:{
 				que:this.qurey
 			}})
 			}
