@@ -1,10 +1,10 @@
 
 <template>
   <div id="app">
-	  <el-row>
+	  <el-row id="top">
 		  <el-col :span="5"><span>欢迎来到购物网站</span></el-col>
 		  <el-col :span="11"><div class="grid-content">  </div></el-col>
-		  <el-col :span="8"><span>用户名/商品/信息</span></el-col>
+		  <el-col :span="8"><camport></camport></el-col>
 	  </el-row>
 	  <el-row>
 		  <el-col :span="6"><h2>购物网站</h2></el-col>
@@ -44,6 +44,7 @@ import lunbo from './components/lunbotext.vue'
 import caidang from './components/caidang.vue'
 import denglu from './components/denglu.vue'
 import sou from './components/sou.vue'
+import camport from './components/Top.vue'
 export default{
 	name:'APP',
 	data(){
@@ -53,7 +54,8 @@ export default{
 	},
 	components:{
 		sou,
-		caidang
+		caidang,
+		camport
 	}
 }
 </script>
@@ -69,6 +71,10 @@ html,body{
 margin: 0;
 padding: 0;
 height: 100%;
+}
+#top{
+	height: 5%;
+	margin-top: 10px;
 }
 a{
 	text-decoration: none;

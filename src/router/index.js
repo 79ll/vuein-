@@ -24,7 +24,8 @@ const routes = [
 		  {
 			  path:'add',
 			  name:'add',
-			  component:add
+			  component:add,
+			  
 		  }
 	  ],
 	  component:houtai,
