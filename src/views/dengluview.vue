@@ -62,6 +62,8 @@
 							type:'success'
 						})
 						this.loading=false;
+						this.$emit("uploadsuccse",this.yonghu.zhanghao)
+					
 						this.$router.push('/Home')
 						}
 						else{	this.loading=false;

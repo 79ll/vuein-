@@ -4,7 +4,7 @@
 	  <el-row id="top">
 		  <el-col :span="5"><span>欢迎来到购物网站</span></el-col>
 		  <el-col :span="11"><div class="grid-content">  </div></el-col>
-		  <el-col :span="8"><camport></camport></el-col>
+		  <el-col :span="8"><camport :username="name"></camport></el-col>
 	  </el-row>
 	  <el-row>
 		  <el-col :span="6"><h2>购物网站</h2></el-col>
@@ -31,8 +31,8 @@
 			<el-col :span="3"><div class="grid-content"> </div></el-col>
 			
 		<el-col :span="21" id="viewcol">
-	<div id="view">
-	<router-view :key="$route.query.que"></router-view>
+	<div id="view" >
+	<router-view :key="$route.query.que" @uploadsuccse="setname" :username="name"></router-view>
 	</div>
 	</el-col>
 	<el-col :span="2"><div class="grid-content"> </div></el-col>
@@ -48,14 +48,36 @@ import camport from './components/Top.vue'
 export default{
 	name:'APP',
 	data(){
-		return {id:'zhangsan'
-			
+		return {id:'zhangsan',
+			name:'用户'
 		}
 	},
 	components:{
 		sou,
 		caidang,
 		camport
+	},
+	mounted() {
+		this.$axios({
+		methods:'get',
+		url:'/zhuce',
+		params:{
+			type:'ol'
+		}
+		}).then((data)=>{
+			this.name=data
+		})
+	},
+	provide(){
+		return{
+			name:this.name
+		}
+	},
+	methods:{
+		setname(data){
+		
+			this.name=data
+		}
 	}
 }
 </script>

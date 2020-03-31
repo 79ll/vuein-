@@ -1,7 +1,7 @@
 <template>
 	<div>
 	<router-link :to="{path:'/houtai',query:{index:2}}">
-	<el-link icon="el-icon-user">{{yonghu}}</el-link>
+	<el-link icon="el-icon-user">{{username}}</el-link>
 	</router-link>
 	<router-link to="/view">
 	<el-link icon="el-icon-s-shop">商品</el-link>
@@ -17,11 +17,8 @@
 <script>
 	export default{
 		name:"Top",
-		data(){
-			return{
-			yonghu:'用户',
-				}
-		}
+		
+		props:['username']
 		
 	}
 </script>
