@@ -72,7 +72,7 @@
 								{validator:Isexist,trigger:'blur'},
 								{type:"string",whitespace:true,trigger:'blur'}],
 					mima:[{required:true,message:'密码不能为空',trigger:'blur'},
-					{min:5,max:16,message:'密码长度应该5到6之间',trigger:'blur'},],
+					{min:5,max:16,message:'密码长度应该5到16之间',trigger:'blur'},],
 					nextmima:[{
 						required:true,message:'密码不能为空',trigger:'blur'
 					}]

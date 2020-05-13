@@ -6,7 +6,7 @@
 			<div class="router-text" ref="router">
 				<router-link to="/Home" tag="div" @mouseenter.native="add(0)"  @mouseout.native="remove(0)" >首页</router-link>
 				<router-link :to="{path:'/view',query:{que:'衣服'}}" tag="div" @mouseout.native="remove(1)" @mouseenter.native="add(1)" > 衣服</router-link>
-				<router-link :to="{path:'/view',query:{que:'电器'}}" tag="div" @mouseout.native="remove(2)" @mouseenter.native="add(2)"> 电器</router-link>
+				<router-link :to="{path:'/view',query:{que:'电具'}}" tag="div" @mouseout.native="remove(2)" @mouseenter.native="add(2)"> 电具</router-link>
 				<router-link :to="{path:'/view',query:{que:'家具'}}" tag="div" @mouseout.native="remove(3)" @mouseenter.native="add(3)"> 家具</router-link>
 				<router-link :to="{path:'/view',query:{que:'食品'}}" tag="div" @mouseout.native="remove(4)" @mouseenter.native="add(4)"> 食品</router-link>
 				
@@ -49,7 +49,7 @@
 <style>
 	.router-text:after{
 	
-	            content:".";
+	            content:" ";
 	            display: block;
 	            height: 0;
 	            clear: both;

@@ -4,7 +4,7 @@
 			element-loading-text="登录中">
 			<el-form :model="yonghu" status-icon >
 			<el-form-item >
-			<h1>注册</h1>
+			<h1>登录</h1>
 			</el-form-item >
 			<el-form-item label="输入账号" >
 			<el-input
@@ -55,16 +55,15 @@
 						mima:this.yonghu.mima
 					},
 					}).then((data)=>{
-						
-						if(data.data=="Yes")
+						if(data.data.Yesno=="yes")
 						{this.$message({
 							message:"登录成功",
 							type:'success'
 						})
 						this.loading=false;
-						this.$emit("uploadsuccse",this.yonghu.zhanghao)
-					
+						this.$root.$data.username=this.yonghu.zhanghao
 						this.$router.push('/Home')
+						this.$root.list=data.data.list
 						}
 						else{	this.loading=false;
 							console.log(data);

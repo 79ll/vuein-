@@ -21,7 +21,7 @@
 		data(){
 			return {
 				index : 0,
-				picturelist : ['下載.jpg','f255d5008585c7be1b28aad08d3272fe.jpg',"222002511.jpeg",'u=1452084672,2791892417&fm=26&gp=0.jpg','下載 (1).jpg','下載 (2).jpg']
+				picturelist : ['inde2222x.jpg','f255d5008585c7be1b28aad08d3272fe.jpg',"222002511.jpeg",'u=1452084672,2791892417&fm=26&gp=0.jpg','下載 (1).jpg','下載 (2).jpg']
 					};
 				},
 		

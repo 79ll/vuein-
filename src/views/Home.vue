@@ -8,21 +8,42 @@
 	<el-col :span="8"><denglu></denglu></el-col>
 
 </el-row>
-	
+<div>销量前四</div>
+	<div v-for="(item,index) in list" :key="index"><item :all="item" :key="index"></item><span>{{item.sale}}</span></div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
+
 import HelloWorld from '@/components/HelloWorld.vue'
 import lunbo from '../components/lunbo.vue'
 import denglu from '../components/denglu.vue'
+import  item from '../components/shangpingrow.vue'
 export default {
   name: 'home',
+  data(){
+	  return{
+		list:[]  
+	  }
+  },
   components: {
   denglu,
- lunbo
+ lunbo,
+ item
+
+  },
+  mounted() {
+  	this.$axios(
+	{
+		methods:'get',
+		url:'/order',
+		
+	}
+	).then(r=>{
+		this.list=r.data
+	})
   }
+  
 }
 </script>
 <style scoped>

@@ -40,7 +40,8 @@
 		<router-link :to="{path:'/view',query:{que:'童装夏装'}}" > 夏装</router-link>
 		<router-link :to="{path:'/view',query:{que:'童装冬装'}}" > 冬装</router-link>
 		<router-link :to="{path:'/view',query:{que:'童装衬衣'}}" > 衬衣</router-link>
-		<router-link :to="{path:'/view',query:{que:'童装裙子'}}" > 裤子</router-link>
+		<router-link :to="{path:'/view',query:{que:'童装裙子'}}" > 裙子</router-link>
+		<router-link :to="{path:'/view',query:{que:'童装裤子'}}" > 裤子</router-link>
 		<router-link  :to="{path:'/view',query:{que:'童装其他'}}"> 其他</router-link>
 		</div>
 		</div>
@@ -48,7 +49,7 @@
 		<div class="text" ref="text"  @mouseout="htmldisplay(2)" @mouseover="htmladd(2)">
 		<div class="text-row">
 		<span>手机通讯:</span>
-		<router-link :to="{path:'/view',query:{que:'手机'}}" > 手机</router-link>
+		<router-link :to="{path:'/view',query:{que:'普通手机'}}" > 手机</router-link>
 		<router-link :to="{path:'/view',query:{que:'游戏手机'}}" > 游戏手机</router-link>
 		<router-link :to="{path:'/view',query:{que:'老人手机'}}" > 老人手机</router-link>
 		<router-link  :to="{path:'/view',query:{que:'对讲机'}}"> 对讲机</router-link>
@@ -162,8 +163,7 @@
 		<router-link  :to="{path:'/view',query:{que:'车厘子'}}"> 车厘子</router-link>
 		<router-link  :to="{path:'/view',query:{que:'百花果'}}"> 百花果</router-link>
 		<router-link  :to="{path:'/view',query:{que:'柚子'}}"> 柚子</router-link>
-		<router-link  :to="{path:'/view',query:{que:'本土水果'}}"> 本土水果</router-link>
-		<router-link  :to="{path:'/view',query:{que:'进口水果'}}"> 进口水果</router-link>
+		
 		</div>
 		<div class="text-row">
 		<span>:蔬菜蛋类</span>

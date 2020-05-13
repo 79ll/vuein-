@@ -8,6 +8,8 @@ import zhuce from '../views/zhuce.vue'
 import houtai from '../views/houtai.vue'
 import add from '../views/add.vue'
 import denglu from '../views/dengluview.vue'
+import buy from '../views/bug.vue'
+import afterbuy from '../views/afterbuy.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -18,6 +20,16 @@ const routes = [
     
   },
   {
+	path:'/buy',
+	name:'buy',
+	component:buy
+  },
+  {
+  	path:'/afterbuy',
+  	name:'afterbuy',
+  	component:afterbuy
+  },
+  {
 	  path:'/houtai',
 	  name: 'houtai', 
 	  children:[
@@ -26,7 +38,12 @@ const routes = [
 			  name:'add',
 			  component:add,
 			  
-		  }
+		  },
+		  {
+		    path: 'about',
+		    name: 'about',
+		    component:  About
+		  },
 	  ],
 	  component:houtai,
 	 
@@ -46,20 +63,6 @@ const routes = [
 	  path:'/denglu',
 	  name:'denglu',
 	  component:denglu
-  },
-  {
-    path: '/about/:id',
-    name: 'about',
-	children:[
-		{path:"text",
-		name:'text',
-		component:Text
-		}
-	],
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component:  About
   },
   {
 	  path:'/view',
